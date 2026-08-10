@@ -1,0 +1,20 @@
+class Solution {
+    public boolean isHappy(int n) {
+        // 
+        int catc=step(n);
+        while(catc!=1 && catc!=4){
+            catc=step(catc);
+        }
+        if(catc==1) return true;
+        else return false;
+    }
+    static int step(int num){
+        int answer=0;
+        while(num!=0){
+            int o=num%10;
+            answer=answer+(o*o);
+            num/=10;
+        }
+        return answer;
+    }
+}
