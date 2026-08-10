@@ -1,0 +1,24 @@
+class Solution {
+    public List<Integer> selfDividingNumbers(int left, int right) {
+        List<Integer> answer=new ArrayList<>();
+        for(int i=left;i<=right;i++){
+            int a=dis(i);
+            if(a!=0){
+            answer.add(a);
+            }
+        }
+        return answer;
+    }
+    static int dis(int n){
+        int check_num=n;
+        while(n!=0){
+            int d=n%10;
+            if(d!=0){
+            if(check_num%d!=0) return 0;
+            }
+            else return 0;
+            n/=10;
+        }
+        return check_num;
+    }
+}
