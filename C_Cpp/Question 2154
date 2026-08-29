@@ -1,0 +1,15 @@
+int findFinalValue(int* nums, int numsSize, int original) {
+ // find the orginal and do the requires steps
+  while(1){
+    int count =0;
+    for(int i=0;i<numsSize;i++){
+        if(nums[i]==original){
+            original*=2;
+            count++;
+            break;
+        }
+    }
+    if(!count) break;
+  }
+  return original;
+}
