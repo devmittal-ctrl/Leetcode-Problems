@@ -1,0 +1,42 @@
+/* here in this we have to return the letter combination on the user defined number and perfro  the combination part of this */
+class Solution {
+    vector<string> answer;
+    string digits;
+    string ref(char digit){ 
+        switch(digit){
+            case '2': return "abc";
+            case '3': return "def";
+            case '4': return "ghi";
+            case '5': return "jkl";
+            case '6': return "mno";
+            case '7': return "pqrs";
+            case '8': return "tuv";
+            case '9': return "wxyz";
+        }
+        return ""; // for the number which are not included in the range of the digit[i]
+    }
+    void genstr(int i, string & now){  // if all the indexing are done / included 
+        if(i==digits.length()){ 
+        answer.push_back(now);
+        return;
+        }
+    // now have to set the string of all possiblities 
+    string pending=ref(digits[i]);
+    for(int k=0;k<pending.length();k++){
+        now.push_back(pending[k]);
+        genstr(i+1,now);
+        now.pop_back();
+    }
+}
+public:
+    vector<string> letterCombinations(string digits) {
+        // set the digit with the thius as private
+         this->digits=digits;
+         // emptying the answer string to avoid the garbage value 
+         answer.clear();
+         // satrring the new string with new empty block 
+         string now="";
+         genstr(0,now);
+         return answer;
+    }
+};
