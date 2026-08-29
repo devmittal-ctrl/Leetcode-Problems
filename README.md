@@ -15,7 +15,9 @@ I am using this repository to:
 
 Currently, the solutions are primarily written in:
 
-* Java  * Python  * C/C++
+* Java
+* Python
+* C/C++
 
 ## Progress
 
