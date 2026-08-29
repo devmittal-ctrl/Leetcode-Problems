@@ -1,0 +1,14 @@
+bool isPalindrome(int x) {
+    // here in this we eliminate all the negative number and the number ends with 0
+  if(x<0 || (x%10==0 && x!=0)){
+    return false;
+  }
+  int revhalf=0;
+  // we are going to check for the numbers half value so that we can proceed further
+  while(x>revhalf){
+    revhalf=revhalf*10 + x%10;
+    x/=10;
+  }
+  // here in this while loop we checks for the number half whrther it is equal to remaing half or not 
+  return x== revhalf || x==revhalf/10;
+}
