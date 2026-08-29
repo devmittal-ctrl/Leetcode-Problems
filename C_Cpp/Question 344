@@ -1,0 +1,13 @@
+class Solution {
+public:
+    void reverseString(vector<char>& s) {
+        // here only i have to reverse a string only
+        for(int i=0;i<s.size()/2;i++){
+            /* swapping the digits from the first 
+            and corresponds to last one */
+            s[i]=s[i]+s[s.size()-1-i];
+            s[s.size()-1-i]=s[i]-s[s.size()-1-i];
+            s[i]=s[i]-s[s.size()-1-i];
+        }
+    }
+};
