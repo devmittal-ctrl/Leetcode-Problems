@@ -1,0 +1,17 @@
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        // here we have to convert the upper to lower and remove non alpha num characters 
+        // then to palindrome
+        string sc;
+        for(int i=0;i<s.length();i++){
+            if(s[i]>='A' && s[i]<='Z') sc+=(s[i]+32) ;
+            else if((s[i]>='a' && s[i]<='z')|| s[i]>='0' && s[i]<='9') sc+=s[i];
+        }
+        // now to check for the palindrome in string s2
+        for(int j=0;j<sc.length()/2;j++){
+            if(sc[j]!=sc[sc.length()-1-j]) return false;
+        }
+        return true;
+    }
+};
