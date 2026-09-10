@@ -1,0 +1,34 @@
+// logic 1 of solving the problem 
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+        int x_arry[]=new int[n];
+        int y_arry[]=new int[n];
+        for(int i=0;i<n;i++){
+            x_arry[i]=nums[i];
+        }
+        for(int ii=0;ii<n;ii++){
+            y_arry[ii]=nums[n+ii];
+        }
+        int shuffle_arry[]=new int[nums.length];
+        for(int i=0;i<2*n;i++){
+            if(i%2==0){
+                shuffle_arry[i]=x_arry[i/2];
+            }
+            if(i%2!=0){
+                shuffle_arry[i]=y_arry[i/2];
+            }
+        }
+        return shuffle_arry;
+    }
+}
+// logic 2 of solving the problem 
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+        int []shuffle_arry=new int[2*n];
+        for(int i=0;i<n;i++){
+            shuffle_arry[2*i]=nums[i]; // half of array => xn is covered 
+            shuffle_arry[2*i +1]=nums[n+i]; // rest half of array => yn is covered 
+        }
+        return shuffle_arry;
+    }
+}
