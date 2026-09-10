@@ -1,0 +1,12 @@
+class Solution {
+    public int countOdds(int low, int high) {
+        // 1 - 10 set of 10 numbers then 5  odd 5 even 
+        int diff=high-low +1;
+        int answer=diff/2;
+        if(diff%2==0) return answer; // complete set of even numbers 
+        else{
+            if(low%2==0) return answer;
+            else return answer+1;
+        }
+    }
+}
