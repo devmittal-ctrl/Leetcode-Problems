@@ -1,0 +1,12 @@
+class Solution {
+    public int recursion(int a){
+        if(a==0) return 0;
+        if(a==1) return 1;
+        int answer=recursion(a-1)+recursion(a-2);
+        return answer;
+    }
+    public int fib(int n) {
+        int t=recursion(n);
+        return t;
+    }
+}
