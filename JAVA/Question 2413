@@ -1,0 +1,7 @@
+class Solution {
+    public int smallestEvenMultiple(int n) {
+        // finding the smallest even multiple of a number 
+        if(n%2==0) return n;
+        else return (n*2);
+    }
+}
