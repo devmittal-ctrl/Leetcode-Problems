@@ -1,0 +1,13 @@
+class Solution {
+    public int search(int[] nums, int target) {
+            int a=ans(nums,target,0,nums.length -1);
+            return a;
+    }
+    public int ans(int []num,int search,int index,int last){
+        if(index>last) return -1;
+        int mid=index+(last-index)/2;
+        if(num[mid]==search) return mid;
+        if(num[mid]>search) return ans(num,search,index,mid-1);
+        return ans(num,search,mid+1,last);
+    }
+}
